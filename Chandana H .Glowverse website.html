@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GlowVerse - Beauty Website</title>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Arial, sans-serif; line-height: 1.6; background: #fff0f5; color: #333; }
+
+nav { background: #ff69b4; padding: 15px; text-align: center; position: sticky; top: 0; z-index: 100; }
+nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
+nav a:hover { text-decoration: underline; }
+.cart { float: right; color: white; font-weight: bold; }
+
+section { padding: 50px 20px; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background-size: cover; background-position: center; }
+
+section h1, section h2, section h3 { margin-bottom: 20px; }
+
+section#home { 
+background-image: url('https://png.pngtree.com/thumb_back/fh260/back_our/20190622/ourmid/pngtree-texture-background-of-golden-luxury-cosmetics-image_206252.jpg'); 
+color: #fff; 
+text-shadow: 2px 2px 4px #000; 
+}
+
+section#about { 
+background-image: url('https://static.vecteezy.com/system/resources/previews/039/578/478/non_2x/ai-generated-composition-of-beauty-and-make-up-cosmetics-on-pink-studio-background-photo.jpg'); 
+}
+
+section#products, section#offers { background: #fff0f5; }
+section#services, section#thankyou { background: #ffe4e1; }
+
+.products { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; width: 100%; max-width: 1200px; }
+
+.product { border: 1px solid #ddd; padding: 15px; border-radius: 10px; background: #fff; text-align: center; transition: 0.3s; }
+.product:hover { transform: scale(1.05); }
+
+.product img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 10px; }
+
+.product button { margin-top: 10px; padding: 10px 20px; background: #ff69b4; color: #fff; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+.product button:hover { background: #d63384; }
+
+footer { background: #ff69b4; color: white; text-align: center; padding: 15px; }
+ul { text-align: left; display: inline-block; margin-bottom: 20px; }
+
+.social-links a { margin: 0 10px; text-decoration: none; color: #fff; font-size: 1.2em; }
+.social-links a:hover { color: #d63384; }
+</style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About Us</a>
+<a href="#products">Products</a>
+<a href="#services">Services</a>
+<a href="#offers">Offers</a>
+<a href="#thankyou">Thank You</a>
+<span class="cart">🛒 Cart: <span id="cart-count">0</span></span>
+</nav>
+
+<!-- Home -->
+<section id="home">
+<h1>Welcome to GlowVerse 🌸</h1>
+<p>Your universe of beauty – Glow beyond boundaries with us.</p>
+</section>
+
+<!-- About -->
+<section id="about">
+<h1>About GlowVerse</h1>
+<p>We deliver high-quality, affordable & sustainable beauty solutions that empower confidence and self-expression.</p>
+<h3>💫 Glow Beyond Boundaries</h3>
+</section>
+
+<!-- Products -->
+<section id="products">
+<h1>Our Products</h1>
+
+<div class="products">
+
+<div class="product">
+<img src="https://st4.depositphotos.com/2060347/20064/i/450/depositphotos_200644890-stock-photo-red-lipstick-isolated-white-background.jpg">
+<h3>💄 Lipstick</h3>
+<button onclick="addToCart('Lipstick')">Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="https://i.pinimg.com/736x/78/3b/73/783b73b4af17f4fc9e2338c21f076963.jpg">
+<h3>🧴 Skincare Kit</h3>
+<button onclick="addToCart('Skincare Kit')">Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="https://m.media-amazon.com/images/I/711t9wxyobL.UF1000,1000_QL80.jpg">
+<h3>✨ Foundation</h3>
+<button onclick="addToCart('Foundation')">Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="https://www.bbassets.com/media/uploads/p/l/20004724_11-pantene-advanced-hair-care-solution-shampoo-lively-clean.jpg">
+<h3>🌸 Shampoo</h3>
+<button onclick="addToCart('Shampoo')">Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBy0Ij9Qw6iitN8v4eQLC2zHuRdcL05ZZq_A&s">
+<h3>💅 Nail Polish</h3>
+<button onclick="addToCart('Nail Polish')">Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="https://beardo.in/cdn/shop/files/Beardo_Godfather_EDP_A__Banner_2160_x_2160_04.jpg?v=1758612605&width=300.jpg">
+<h3>🌹 Perfume</h3>
+<button onclick="addToCart('Perfume')">Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="https://d1ebdenobygu5e.cloudfront.net/media/ustraa/o/i/oilyskin-facewash-banner1-mobile.jpg">
+<h3>🫧 Face Wash</h3>
+<button onclick="addToCart('Face Wash')">Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnfgi3d02EN1s2vxqIzBZw4qcEaxFPBS5RDA&s.jpg">
+<h3>💎 Compact Powder</h3>
+<button onclick="addToCart('Compact Powder')">Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="https://www.simpleskincare.in/cdn/shop/files/VIT_CEF_1000x1000.jpg?v=1721647446.jpg">
+<h3>✨ Vitamin C Serum</h3>
+<button onclick="addToCart('Vitamin C Serum')">Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="https://revlon.co.in/cdn/shop/files/8902656303752_1_1080x.jpg?v=1729320429.jpg">
+<h3>🖊 Eyeliner</h3>
+<button onclick="addToCart('Eyeliner')">Add to Cart</button>
+</div>
+<div class="product">
+  <img src="https://www.oliviabeauty.in/cdn/shop/files/Eyeliner_460x@2x.jpg?v=1754971024.jpg">
+  <h3>🪞 Highlighter</h3>
+  <button onclick="addToCart('Highlighter')">Add to Cart</button>
+</div>
+
+<div class="product">
+  <img src="https://images.mamaearth.in/catalog/product/g/e/gel-face-moisturizer.jpg?format=auto&height=600&width=600.jpg">
+  <h3>🌿 Moisturizer</h3>
+  <button onclick="addToCart('Moisturizer')">Add to Cart</button>
+</div>
+
+<div class="product">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJSx-9P0kloEb4go0EesxAj_jI96D-8lg-yg&s.jpg">
+  <h3>💧 Micellar Water</h3>
+  <button onclick="addToCart('Micellar Water')">Add to Cart</button>
+</div>
+
+<div class="product">
+  <img src="https://images-static.nykaa.com/media/catalog/product/0/d/0dc21ecNYKAC00000190-az_1.jpg?tr=w-500.jpg">
+  <h3>👁 Mascara</h3>
+  <button onclick="addToCart('Mascara')">Add to Cart</button>
+</div>
+
+<div class="product">
+  <img src="https://innovist.com/cdn/shop/files/1_4_643b95cd-b69a-4f28-b8a3-ce1ed4a5142b.jpg?v=1759828001.jpg">
+  <h3>🌙 Eye Cream</h3>
+  <button onclick="addToCart('Eye Cream')">Add to Cart</button>
+</div>
+
+<div class="product">
+  <img src="https://ponds.in/cdn/shop/articles/Ultimate_Guide_to_Gel_Sunscreens_What_You_Need_to_Know.png?v=1738835330.jpg">
+  <h3>☀️ Sunscreen</h3>
+  <button onclick="addToCart('Sunscreen')">Add to Cart</button>
+</div>
+</div>
+</section>
+
+<!-- Services -->
+<section id="services">
+<h1>Our Services</h1>
+<p>Online shopping • In-store trials • Beauty consultations • Community events</p>
+</section>
+
+<!-- Offers -->
+<section id="offers">
+<h1>Exclusive Offers 🎉</h1>
+<p>20% OFF on your first order</p>
+<p>Buy 1 Get 1 Free on Lipsticks</p>
+<p>Free Shipping above ₹999</p>
+</section>
+
+<!-- Thank You -->
+<section id="thankyou">
+<h1>Thank You 💖</h1>
+<p>Stay radiant. Stay confident. Glow beyond boundaries.</p>
+<div class="social-links">
+<a href="#">Instagram</a> |
+<a href="#">LinkedIn</a> |
+<a href="#">Gmail</a>
+</div>
+</section>
+
+<footer>
+<p>© 2025 GlowVerse | All Rights Reserved</p>
+</footer>
+
+<!-- JavaScript -->
+<script>
+let cartCount = 0;
+
+function addToCart(product) {
+cartCount++;
+document.getElementById("cart-count").innerText = cartCount;
+alert(product + " added to cart 🛒");
+}
+</script>
+
+</body>
+</html>
